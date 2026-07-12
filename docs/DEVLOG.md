@@ -3,6 +3,7 @@
 ---
 
 # Day 1 - 8 July 2026
+#Mile stone 1<!---->
 
 ## Objective
 Initialize the HorizonOS project.
@@ -25,8 +26,10 @@ Set up the documentation structure.
 ---
 
 # Day 2 - 8 July 2026
+#Milestone -2
 
 ## Objective
+
 Design the foundation and architecture of HorizonOS.
 
 ### Completed
@@ -58,6 +61,7 @@ Begin writing the first bootloader source code.
 ---
 
 # Day 3 - 8 July 2026
+#Milestone -3
 
 ## Objective
 Create the first HorizonOS source code.
@@ -80,3 +84,23 @@ Create the first HorizonOS source code.
 Assemble the bootloader into a bootable binary.
 Run HorizonOS inside QEMU.
 Display the first message on the screen.
+---
+
+# Milestone 4 - First Successful Boot
+
+## Objective
+Create a valid boot sector and boot HorizonOS.
+
+### Completed
+- Converted `boot.asm` into a valid 512-byte boot sector.
+- Added the boot signature (`0xAA55`).
+- Assembled `boot.asm` into `boot.bin`.
+- Successfully booted HorizonOS in QEMU.
+
+### Lessons Learned
+- A BIOS boot sector must be exactly 512 bytes.
+- The boot signature is required for BIOS to recognize a bootable disk.
+- A black screen means the CPU is executing our code, but we haven't told it to display anything yet.
+
+### Next Goal
+Display "Welcome to HorizonOS" on the screen using BIOS video services.
