@@ -104,3 +104,42 @@ Create a valid boot sector and boot HorizonOS.
 
 ### Next Goal
 Display "Welcome to HorizonOS" on the screen using BIOS video services.
+---
+
+# Milestone 5 - First Screen Output
+
+## Objective
+Display the first visible output from HorizonOS.
+
+### Completed
+- Learned how BIOS video services work.
+- Learned the purpose of `AH` and `AL` registers.
+- Learned the BIOS interrupt `int 0x10`.
+- Modified the bootloader to print the first character.
+- Successfully displayed the letter `A` on the screen in QEMU.
+
+### Code Added
+
+```asm
+mov ah, 0x0E
+mov al, 'A'
+int 0x10
+```
+
+### Lessons Learned
+- `mov` only copies data into registers.
+- `AH` tells the BIOS which video service to use.
+- `AL` stores the character to print.
+- `int 0x10` calls the BIOS video service.
+- Printing a string is simply printing one character after another.
+
+### Result
+HorizonOS successfully displayed its first visible output.
+
+### Next Goal
+Print the complete message:
+
+Welcome to HorizonOS
+
+using a proper string instead of printing one character manually.
+
